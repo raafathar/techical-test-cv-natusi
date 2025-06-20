@@ -102,6 +102,7 @@
                         <thead>
                             <tr class="text-muted fw-semibold">
                             <th scope="col">Nama</th>
+                            <th scope="col">Harga Satuan</th>
                             <th scope="col">Jumlah Terjual</th>
                             <th scope="col">Nominal</th>
                             </tr>
@@ -111,6 +112,9 @@
                                     <tr>
                                         <td>
                                             <p class="mb-0 fs-3">{{ $item->drug->nama_obat ?? '-' }}</p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 fs-3"> {{ $item->drug->harga_obat ? 'Rp ' . number_format($item->drug->harga_obat, 0, ',', '.') : '-' }}</p>
                                         </td>
                                         <td>
                                             <p class="mb-0 fs-3">{{ $item->total_qty }}</p>
