@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}libs/owl.carousel/dist/assets/owl.carousel.min.css">
     <link id="themeColors" rel="stylesheet" href="{{ asset('/') }}libs/select2/dist/css/select2.min.css" />
     <!-- Core Css -->
-    <link id="themeColors" rel="stylesheet" href="{{ asset('/') }}css/style-orange.min.css" />
+    <link id="themeColors" rel="stylesheet" href="{{ asset('/') }}css/style.css" />
     <style>
         .sidebar-nav ul .sidebar-item .first-level .sidebar-link .ti {
             font-size: 15px !important;
