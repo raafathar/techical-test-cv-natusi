@@ -49,7 +49,12 @@ class TransactionController extends BaseDashboardController
                         $drugId = $request->input("drugs.$index.drug_id");
                         $drug = \App\Models\Drug::find($drugId);
 
-                        if ($drug && $value > $drug->stock) {
+                        if (!$drug) {
+                            $fail("Obat tidak ditemukan atau tidak tersedia.");
+                            return;
+                        }
+
+                        if ($value > $drug->stock_obat) {
                             $fail("Stok obat '{$drug->nama_obat}' tidak mencukupi. Tersedia: {$drug->stock_obat}.");
                         }
                     }
