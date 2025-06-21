@@ -25,7 +25,7 @@ class DetailTransactionDataTable extends DataTable
                 return $detail->transaction_id ?? '-';
             })
             ->addColumn('subtotal', function ($detail) {
-                return 'Rp ' . number_format($detail->qty * $detail->price, 0, ',', '.');
+                return 'Rp ' . number_format($detail->drug->harga_obat, 0, ',', '.');
             })
             ->editColumn('price', function ($detail) {
                 return 'Rp ' . number_format($detail->price, 0, ',', '.');
@@ -94,8 +94,8 @@ class DetailTransactionDataTable extends DataTable
             Column::make('transaction_id')->title('Kode Transaksi'),
             Column::make('drug_name')->title('Nama Obat'),
             Column::make('qty')->title('Jumlah'),
-            Column::make('price')->title('Harga Satuan'),
-            Column::make('subtotal')->title('Subtotal'),
+            Column::make('subtotal')->title('Harga'),
+            Column::make('price')->title('Subtotal'),
             Column::make('created_at')->title('Dibuat Pada'),
             Column::make('updated_at')->title('Diedit Pada'),
         ];
